@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background: red;"></div>
+    <script>
+        // 1、想操作谁就获取谁
+        let box = document.getElementById('box');
+
+        // / /给当前元素增加点击事件
+        box.onclick = function(){
+            // 每当点击一次元素，函数的大括号里的代码就会执行一次
+            console.log(1)
+            // 当用户点击元素的时候，让元素改变背景颜色
+            let color = box.style.background;
+            // 当第二次点击的时候color应该是啥
+            if(color === 'red'){
+                box.style.background = 'green';
+            }
+            else if(color === 'green'){
+                box.style.background = 'yellow';
+            }
+            else if(color === 'yellow'){
+                box.style.background = 'orange';
+            }
+            else {
+                box.style.background = 'red';
+            }
+
+        }
+
+        // red-->green-->yeloow-->orange-->red-->green...
+        // 把if else把switch case进行改写
+        // 预习函数的视频 复习前三天讲的知识点
+        // 我会出一些练习，去做完
+
+      
+    </script>
+</body>
+</html>
