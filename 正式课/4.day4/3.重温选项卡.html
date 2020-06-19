@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 10px auto;
+        }
+
+        ul {
+            list-style: none;
+            position: relative;
+            top: 1px;
+            text-align: center;
+            display: flex;
+
+        }
+
+        li {
+            border: 1px solid black;
+            line-height: 50px;
+            height: 50px;
+            font-size: 30px;
+            margin-right: 20px;
+            padding: 0 10px;
+        }
+
+        #box div {
+            width: 500px;
+            text-align: center;
+            height: 300px;
+            line-height: 300px;
+            font-size: 50px;
+            color: orangered;
+            border: 1px solid black;
+            display: none;
+        }
+
+        #navList li.active {
+            border-bottom-color: white;
+        }
+
+        #box div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li class="active">erYa</li>
+            <li>jinYu</li>
+            <li>xiaoHua</li>
+        </ul>
+        <div class="active">长的这俊哩</div>
+        <div>你好帅啊</div>
+        <div>哈哈</div>
+    </div>
+    <script>
+        let navList = document.getElementsByTagName('li');
+        let tabList = document.querySelectorAll('#box div');
+        console.log(navList, tabList);
+
+        // for(var i = 0;i<navList.length;i++){
+        //     navList[i].index = i;
+        //     navList[i].onclick = function(){
+
+        //         select(this.index)
+        //     }
+        // };
+        // 当for循环执行完成之后，才会给每一个li帮上点击事件呢
+        // 当for循环完成之后，i的值是3
+        // 用户点击事件肯定是for循环完成之后点击的
+
+
+        function select(index) {
+            for (var i = 0; i < navList.length; i++) {
+                navList[i].className = '';
+                tabList[i].className = '';
+            }
+            navList[index].className = 'active';
+            tabList[index].className = 'active';
+        }
+
+
+
+        // 使用块级作用域解决这个问题
+        // for(let i = 0;i<navList.length;i++){
+        //     navList[i].onclick = function(){
+
+        //         select(i)
+        //     }
+        // };
+
+        /* 
+        
+        {
+            let i = 0;
+              navList[0].onclick = function(){
+                select(i)
+            }
+        }
+
+
+         {
+            let i = 1;
+              navList[i].onclick = function(){
+                select(i)
+            }
+        }
+
+
+         {
+            let i = 2;
+              navList[i].onclick = function(){
+                select(i)
+            }
+        }
+         */
+
+
+
+        // let obj  ={
+
+        // }
+
+        // {
+        //     let i = 0;
+        //     obj.onclick = function(){
+
+        //     }
+        // }
+
+        // function fn(){
+        //     return function(){}
+        // }
+        // let f = fn()
+
+        // 产生一个引用值，而且被外界所接受
+
+
+
+        //--------------------------------------------------------
+
+        for (var i = 0; i < navList.length; i++) {
+            // 当for循环执行的时候，这个自执行函数就会马上执行，然后把当前的i值以实参的形式传递给自执行函数，而且这个自执函数产生了一个引用值（return的函数就是引用值），被外界所接受，所以这个作用域不销毁，所以形参变量的值就被一只保存了下来
+            navList[i].onclick = (function(index){
+                    // 其实最后onclick绑定的函数就是return后面的函数
+                    return function(){
+                        select(index)
+                    }
+            })(i)
+        };
+
+        /* 
+        // 先形成不销毁的作用域就有了闭包
+        // 利用了闭包可以保存变量的机制
+
+        var i = 0;
+         navList[i].onclick = (function(index){ // 0
+                
+                    return function(){ // af0
+                        select(index)
+                    }
+            })(i) // 0
+
+
+         var i = 1;
+         navList[i].onclick = (function(index){ // 1
+                
+                    return function(){
+                        select(index)
+                    }
+            })(i) // 1
+
+         var i = 2;
+         navList[i].onclick = (function(index){ // 2
+                
+                    return function(){
+                        select(index)
+                    }
+            })(i) // 2
+
+        
+         */
+    </script>
+</body>
+
+</html>
