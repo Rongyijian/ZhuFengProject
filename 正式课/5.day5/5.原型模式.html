@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        构造函数可以给当前实例增加私有属性和方法
+        原型模式可以给当前实例增加共有属性和方法
+         */
+        function Fn(name,age){
+            this.name = name;
+            this.age = age;
+            // this.say = function(){}
+        }
+        Fn.prototype.say = function(){
+            console.log(1111);
+            
+        }
+        Object.prototype.ss = 100;
+
+
+        let f1 = new Fn('xiaoming',18);
+        let f2 = new Fn('laowang',55);
+        console.log(f1);
+        // f1.ss = 100 
+         console.log(f1.say);
+         console.log(f1.ss);
+         
+        
+        
+
+
+        /* 
+        1、每一个函数都天生自带一个prototype属性，其属性值是一个对象，里面存储的就是当前类的实例的公有的属性和方法(原型)
+            普通函数
+            类
+        2、每一个原型天生自带一个constructor属性，其属性值指向当前的类
+        3、每一个对象天生自带一个__proto__属性，其属性值指向当前所属的类
+        
+        
+         */
+
+        //  let ary = [1,2,3];
+        //  Array.prototype.push = function(){
+        //      console.log(1111);
+             
+        //  }
+        //  ary.push(1)
+        //  console.log(ary);
+
+
+        // let ary1 = [1,2];
+        // let ary2 = [3,4];
+        // console.log(ary1);
+        
+         
+    </script>
+</body>
+</html>
