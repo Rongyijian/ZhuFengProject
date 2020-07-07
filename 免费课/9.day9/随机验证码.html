@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 800px;
+            margin: 20px;
+            display: flex;
+
+        }
+
+        span {
+            display: block;
+            width: 60%;
+            border: 1 solid pink;
+            line-height: 30px;
+            color: tomato;
+            font-size: 20px;
+
+        }
+
+        button {
+            display: block;
+            background-color: orange;
+            color: white;
+            line-height: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="show">放置验证码的地方</span><button id="btn">看不清</button>
+    </div>
+    <script>
+        //1.想操作谁就获取谁
+        // let show = document.getElementById('show');
+        // let btn = document.querySelector('#btn');
+
+        // function createCode() {
+        //     let str = '1234567890asdfghjklMNBVCXZ';
+        //     //随机产生一个字符串的索引，依照索引拿值
+        //     //随机产生四次，把四个字符拼接到一起就是最后的验证码；
+        //     let value = '';
+        //     for (var i = 0; i < 4; i++) {
+        //         let index = Math.round(Math.random() * (str.length - 1 - 0) + 0);
+        //         let item = str[index];
+        //         value += item;
+        //     }
+        //     show.innerHTML = value;
+        //     btn.onclick = function () {
+        //         createCode()
+        //     }
+        // }
+        setInterval(
+            console.log(1),3000
+            
+        )
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Fn(n) {
+            /* 
+            n = 20
+            this = {}
+                */
+            let m = 10;
+            this.total = m + n; // this.total = 30
+            this.say = function () { // this.say = af1
+                console.log(this.total);
+            }
+            // this.xxx才是给当前实例增加私有属性
+
+        };
+        // 构造函数里的私有变量和当前实例没有直接的关系，this和实例才有关系
+        // this.xxx才是给当前实例增加私有属性
+        let f1 = new Fn(10); // {total:20,say:af0}
+        let f2 = new Fn(20);// {total:30,say:af1}
+        let f3 = Fn(10); // un
+        console.log(f3); // un
+        console.log(f1.n); // un
+        console.log(f2.m); // un
+        console.log(f1.total); // 20
+        f2.say(); // 30
+        console.log(f1 === f2); // false
+
+
+        let ary = [1,2];
+        console.log(ary)
+        console.log(ary.push);
+        // 构造函数解决的是当时实例的私有属性问题
+        // 原型模式解决规定有属性
+        
+
+    </script>
+</body>
+
+</html>

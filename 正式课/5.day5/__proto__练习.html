@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fn(x, y) {
+            this.x = x;
+            this.y = y;
+            this.getX = function () {
+                console.log(this.x);
+            }
+        }
+        Fn.prototype.getX = function () {
+            console.log(this.x);
+        }
+        Fn.prototype.getY = function () {
+            console.log(this.y);
+        }
+        var f1 = new Fn(100, 200);
+        f1.__proto__.a = 300;
+        var f2 = new Fn(100, 200);
+        console.log(f1.getX == f2.getX);//true//f
+        console.log(f1.getY == f2.getY);//true
+        console.log(f1.x == f2.x);//true
+        console.log(Fn.prototype.getX === f1.getX);//t//f
+        console.log(Fn.prototype.getX === f1.__proto__.getX);//t
+        f1.getX();//100
+        Fn.prototype.getX();//un
+        f2.__proto__.getX();//100//un
+        Fn.prototype.getY();//un
+        console.log(f1.a);//300
+        console.log(f1.toString);//'100200'
+    </script>
+</body>
+</html>

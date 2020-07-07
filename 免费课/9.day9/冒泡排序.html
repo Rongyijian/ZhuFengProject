@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers=[11,22,5,4,99,51];
+        function pao(numbers){
+            for(var i=0;i<numbers.length-1;i++){
+                for(var j=0;j<numbers.length-i-1;j++){
+                    if(numbers[j]>numbers[j+1]){
+                        let max=numbers[j];
+                        numbers[j]=numbers[j+1];
+                        numbers[j+1]=max;
+                        
+
+                    }
+                }
+            }
+            return numbers;
+        }
+        console.log(pao(numbers));
+        
+    </script>
+</body>
+</html>

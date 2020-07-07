@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid red;
+            margin-right: 5px;
+        }
+
+        #box div {
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            font-size: 30px;
+            border: 1px solid red;
+            display: none;
+        }
+
+        #box div.active {
+            display: block;
+            background: orangered;
+        }
+
+        ul li.active {
+            background: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li class="active">孙悟空</li>
+            <li>猪八戒</li>
+            <li>沙悟净</li>
+        </ul>
+        <div class="active">他是大师兄</div>
+        <div>他是二师兄</div>
+        <div>他是三师兄</div>
+    </div>
+    <script>
+        let  box=document.getElementById('box');
+        let navlist=box.getElementsByTagName('li');
+        let tablist=box.getElementsByTagName('div');
+
+        for(var i=0;i<navlist.length;i++){
+            navlist[i].index=i;
+            navlist[i].onclick=function(){
+                select(this.index);
+            }
+            
+        }
+
+        function select(index){
+            for(var i=0;i<navlist.length;i++){
+            navlist[i].className='';
+            tablist[i].className='';
+            }
+         navlist[index].className='active';
+        tablist[index].className='active'
+        }
+;
+
+    </script>
+</body>
+</html>

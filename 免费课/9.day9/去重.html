@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ary=[111,22,11,22,22,55,45]
+        function only(ary){
+            obj={}
+            for(var i=0;i<ary.length;i++){
+                obj[ary[i]]=ary[i];
+            }
+            var newary=[];
+            for(key in obj){
+                newary.push(obj[key]);
+            }
+            return newary;
+            
+        }
+
+        
+        console.log(only(ary));
+        
+        
+    </script>
+</body>
+</html>

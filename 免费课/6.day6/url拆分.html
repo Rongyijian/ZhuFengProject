@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url="www.512122442.com?name=111&age=12&phone=123";
+        function playurl(url){
+
+            let list=url.split('?');
+            // console.log(list);
+            let list2=list.split('&');
+            console.log(list2);
+            let obj={}
+            for(var i=0;i<list2.length;i++){
+                let t=list2.split('=');
+            obj[t[0]]=t[1];
+
+            }
+            return obj;
+            
+        }
+        console.log(playurl(url));
+        
+    </script>
+</body>
+</html>

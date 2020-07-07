@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function star(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        star.prototype.x=function(){
+            console.log(this.name+'会唱歌');
+            
+        }
+        var ldh=new star('刘德华',13);
+        var zjl=new star('周杰伦',55);
+        ldh.x();
+        zjl.x();
+        
+    </script>
+</body>
+</html>

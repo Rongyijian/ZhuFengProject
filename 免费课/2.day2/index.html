@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="box">123</div>
+    <!-- <script src="./1.js"></script>
+    <script src="1.js">
+        // 如果script的行间写了src，那标签内部就不要写代码了，如果写了，那就不会生效
+        console.log(123)
+    </script> -->
+    <script>
+        // alert([]); 
+        // alert的弹框如果不点击确定按钮，代码不会往下执行
+        // alert输出的值会默认转化为string
+        // console.log(typeof '1')
+        // typeof 是检测当前的值的数据类型的，返回值是一个字符串，字符串里存放的是就是当前的数据类型
+
+        // let res = confirm(1);
+        // 和alert一样，就是多了一个取消按钮
+        // console.log(res)
+        // 如果点击的是确定，把confirm的返回值是true，如果点击的是取消，那返回值是false
+        // let res = prompt(1);
+        // 和confirm类似，但是prompt的返回值是用户输入的内容，如果用户点击的是取消，那返回值就是null
+        // console.log(res)
+
+        // let res = 200;
+        // let a = alert(1)
+        // console.log(a)
+        let box = document.getElementById('box');
+        // 所有的元素对象都是对象类型的
+        console.log(box);
+        console.dir(box);
+        // 详细输出一个对象
+
+        // var let const function import class for continue if else return switch case name
+
+        var name = 1; // 这是一个坑
+        console.log(typeof name);
+
+        var let = 1; // 浏览器不会报错,这是一个坑
+        // var function  =1;
+    </script>
+</body>
+</html>

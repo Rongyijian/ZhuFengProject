@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button >点击</button>
+    <script>
+        //类里面的共有属性和方法一定要加this使用
+        //es6没有变量提升，所以必须先定义类，通过类实例化对象
+        //constructor里面的this指向实例对象，方法里的this指向方法的调用者
+        var that;
+        class obj{
+            constructor(name,age){
+                that = this;
+                this.name=name;
+                this.age=age;
+                this.btn=document.querySelector('button');
+                this.btn.onclick = this.sing;
+                console.log(this);
+                
+                
+            }
+            sing(){
+                console.log(that.name+'最帅');/*that设为全局变量接受构造函数里的this，也就是ldh这个对象，
+                                                在sing中this的调用者是button，所以没用name属性，只能用
+                                                事先定义好的that，that=this=ldh*/
+                console.log(this)
+                
+            }
+        }
+        var ldh=new obj('刘德华');
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Fn(x, y) {
+        //     this.x = x;
+        //     this.y = y;
+        //     this.getX = function () {
+        //         console.log(this.x);
+        //     }
+        // }
+        // Fn.prototype.getX = function () { // 给Fn的原型增加属性
+        //     return this
+        // }
+        // Fn.prototype.getY = function () {// 给Fn的原型增加属性
+        //     console.log(this.z); // 
+        // };
+
+        // var f1 = new Fn(300, 200); // {x:300,y:200,getX:fun}
+        // var f2 = new Fn(100, 200); // {x:100,y:200,getX:func}
+        // f1.__proto__.x = 300; // 给实例f1所属类的原型增加属性x
+        // f1.__proto__.__proto__.z = 315; // 给Object类的原型增加属性z
+        // f2.r = 300; // 给实例f2增加私有属性r
+
+        // f1.x = "恭喜发财" // 给实例f1的x进行重新赋值
+        // f1.__proto__.eat = function () {// 给Fn的原型增加方法eat
+        //     return this.z;
+        // };
+
+
+        // console.log(Fn.prototype.getX().x === f2.r); // true
+        // console.log(f1.z); // 315
+        // console.log(Fn.prototype.__proto__.__proto__); // null
+        // console.log(f2.eat()); // 315
+        // console.log(Fn.prototype.getY()); // 315 undefined
+        // f1.getX() // '恭喜发财'
+
+        // console.log(f1.getX === Fn.prototype.getX);
+
+        // let ary = [1,2,3];
+        // let ary1 = [2,3,4];
+        // // ary['push'] = function(){};
+        // console.log(ary);
+        // console.log(ary1);
+        
+        
+        // console.log(ary.push === ary1.push);
+
+        // let str = new String('123')
+        // console.dir(str)
+
+        // let str1 = '123';
+        // console.log(str1[0]);
+
+        // console.dir(Fn)
+
+        // Object.prototype.add = function(){
+        //     // 在number原型上增加了一个乘以2的方法
+        //     return this*2
+        // }
+
+
+
+        // let num = 10;
+        // let num1 = 11;
+        // let str3 = '123'
+        // // num.add = function(){
+        // //     return this*2
+        // // }
+        // console.log(num.add());
+        // console.log(num1.add());
+        // console.log(str3.add());
+
+        //
+
+        // pop // 删除数组最后一项
+        // 返回值是删除的那一项
+        // 原数组发生变化
+
+        Array.prototype.myPop = function(){
+                let last = this[this.length-1]; // 获取数组的最后一项；
+                this.length--;
+                return last;
+        }
+        // function ss(){
+
+        // }
+
+        let ary = [1,2,3];
+        console.log(ary.myPop());
+        console.log(ary);
+        
+         
+
+        
+          
+        
+        
+        
+    </script>
+</body>
+
+</html>

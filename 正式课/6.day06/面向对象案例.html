@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tabsbox {
+            height: 300px;
+            width: 300px;
+            border: 2px solid steelblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="tabsbox" id="tab">
+        <nav class="firstnav">
+            <ul>
+                <li class="liactive"><span>1</span><span class="inconfont icon-guanbi"></span></li>
+                <li><span>2</span><span class="inconfont icon-guanbi"></span></li>
+                <li><span>3</span><span class="inconfont icon-guanbi"></span></li>
+            </ul>
+            <div class="tabadd">
+                <span>+</span>
+            </div>
+        </nav>
+
+
+        <!-- tab内容部分 -->
+        <div class="tabscon">
+            <div class="conactive">测试一</div>
+            <div classselect="">测试二</div>
+            <div class="select">测试三</div>
+        </div>
+    </div>
+    <script>
+        class Tab {
+            constructor(id) {
+                //获取元素
+                this.main = document.querySelector(id);
+                this.lis = this.main.querySelectorAll('li');
+                this.sections = this.mian.querySelectorAll('section');
+                this.init();
+
+            }
+            init() {
+                //init 初始化操作，让相关元素绑定事件
+                for (var i = 0; i < this.lis.length; i++) {
+                    this.lis[i].index = i;
+                    this.lis[i].onclick = function () {
+                        // this.lis[i] = null;
+                        // this.sections[i] = null;
+                        console.log(this.index);
+                        
+                    }
+                }
+            }
+            //1.具有切换功能
+            toggleTab() { 
+
+            }
+            //2.添加
+            addTab() { }
+            //3。删除
+            removeTab() { }
+            //修改
+            editTab() { }
+        }
+        new Tab('#tab');
+    </script>
+</body>
+
+</html>
